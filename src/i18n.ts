@@ -39,6 +39,9 @@ i18next.use(LanguageDetector).init({
 	},
 	keySeparator: false, // we use content as keys
 	ns: ['translation'],
+	parseMissingKeyHandler: (key) => {
+		return __DEV__ ? '#' + key + '#' : key;
+	},
 	react: {
 		wait: true,
 	},
